@@ -1,0 +1,21 @@
+# Energy bill calculator program
+
+# -------------------------
+# Subprograms
+# -------------------------
+
+def energy_cost(previousMeterReading, currentMeterReading, calforicValue ):
+  Units_Used = currentMeterReading - previousMeterReading
+  kwh = Units_Used * 1.022 * (calforicValue / 3.6)
+  cost = 0.0284 * kwh
+  return int(cost)
+
+# -------------------------
+# Main program
+# -------------------------
+
+previousMeterReading = int(input("Enter previous reading :"))
+currentMeterReading = int(input("Enter current reading : "))
+calforicValue = 39.3
+cost = energy_cost(previousMeterReading, currentMeterReading, calforicValue)
+print("Cost is £",cost)
